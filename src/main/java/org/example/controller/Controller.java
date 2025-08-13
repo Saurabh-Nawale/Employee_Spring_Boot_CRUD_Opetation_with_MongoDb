@@ -13,6 +13,7 @@ import java.util.Optional;
 @RestController
 
 
+
 @RequestMapping("employee")
 public class Controller {
 
@@ -25,20 +26,24 @@ public class Controller {
      return empService.createEmp(empModel);
     }
 
+
+
     public List<EmpModel>getallEmp(){
         return empService.getAllEmp();
     }
-
+ //Get  emp by ID
     @RequestMapping("/{Id}")
     public Optional<EmpModel>getEmpById(@PathVariable String Id){
         return empService.getEmpById(Id);
     }
 
+    // Update
+
     public EmpModel updateEmp(@PathVariable String id, @RequestBody EmpModel updateEmp){
 
         return empService.updateEmp(id, updateEmp);
     }
-
+// Delete by id
     @DeleteMapping("/{id}")
     public String deleteEmp(@PathVariable String id){
         empService.deleteEmp(id);
