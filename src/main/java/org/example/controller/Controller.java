@@ -21,17 +21,18 @@ public class Controller {
     @Autowired
     private EmpService empService;
 
+    // Creating New Emp
     @PostMapping
     public EmpModel createEmp(@RequestBody  EmpModel empModel){
      return empService.createEmp(empModel);
     }
 
-
+// gating emp
 
     public List<EmpModel>getallEmp(){
         return empService.getAllEmp();
     }
- //Get  emp by ID
+     //Get  emp by ID
     @RequestMapping("/{Id}")
     public Optional<EmpModel>getEmpById(@PathVariable String Id){
         return empService.getEmpById(Id);
