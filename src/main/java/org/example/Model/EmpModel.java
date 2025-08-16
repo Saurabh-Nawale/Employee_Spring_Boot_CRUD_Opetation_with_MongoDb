@@ -4,6 +4,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.lang.annotation.Documented;
 import java.util.Collection;
+
+// @Document(collation = "employees") for mongoDB
 @Document(collation = "employees")
 public class EmpModel {
 
@@ -20,6 +22,7 @@ public class EmpModel {
         this.id = id;
     }
 
+    // Getter Setter
     public String getName() {
         return name;
     }
@@ -44,6 +47,8 @@ public class EmpModel {
         this.salary = salary;
     }
 
+
+    // constructor
     public EmpModel(String id, String name, String department, double salary) {
         this.id = id;
         this.name = name;

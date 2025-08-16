@@ -12,13 +12,16 @@ import java.util.Optional;
 @Service
 public class EmpService {
 
+    // @Autowired → Automatically injects the  EmpRepository object
     @Autowired
     EmpRepository empRepository;
+
 
     public EmpModel createEmp(EmpModel empModel){
         return empRepository.save(empModel);
     }
 
+    // fetch emp
     public List<EmpModel>getAllEmp(){
         return empRepository.findAll();
     }
